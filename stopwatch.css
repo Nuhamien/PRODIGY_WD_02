@@ -16,6 +16,11 @@ h1 {
 #main{
     color: #3600A1;
     margin-left:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
 }
 #hr, #min, #sec {
     display: inline-block;
@@ -107,16 +112,38 @@ li{
 @media (max-width: 768px) {
     h1 {
         font-size: 60px;
+        text-align: center;
     }
 
     .content {
-        margin-left: 0;
         text-align: center;
+        width:max-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left:20px;
+    }
+    #hr, #min, #sec {
+        width:60px; 
+        border-radius: 20px;
+        height:50px;
+        font-size:x-large;
+        padding: auto;
+    }
+    #main{
+        color: #3600A1;
+        margin-left:16vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        width: 100%;
     }
 
     .buttons {
         flex-wrap: wrap; /* Allows buttons to wrap */
         gap: 10px;
+        padding-left: 3px ;
     }
 
     ul {
@@ -124,7 +151,10 @@ li{
     }
 }
 
-
+#begin, #finish, #again, #loop{
+    display: inline-block;
+    width:max-content;
+}
 
 
 
