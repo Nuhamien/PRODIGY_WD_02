@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>querySelector Example</title>
+    <link rel="stylesheet" href="test2.css">
+</head>
+<body>
+    <div>
+        <p >you have clicked the button <span id="counter">X</span> times</p>
+    </div>
+    <button id="clicker">click here</button>
+    <script>
+let counter=document.getElementById("counter");
+let clicker=document.getElementById("clicker")
+ 
+let clickCount=0;
+function changeWord(time){
+    counter.innerHTML=time;
+}
+clicker.addEventListener("click" , function(){
+    clickCount++;
+    changeWord(clickCount);
+});
+
+
+    </script>
+    </body>
+    </html>

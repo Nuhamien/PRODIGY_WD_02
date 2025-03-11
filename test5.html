@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>querySelector Example</title>
+    <link rel="stylesheet" href="test2.css">
+</head>
+<body>
+    <p id="tok">some initial text</p>
+    <button id="changer">Hide</button>
+    <script>
+let tok = document.getElementById("tok");
+let changer= document.getElementById("changer");
+let original=tok.textContent;
+
+changer.addEventListener("click", function(){
+   if(changer.textContent==="Hide"){
+    tok.style.display="none";
+    changer.textContent="show";
+   }
+    else{tok.style.display="block";
+    changer.textContent = "Hide";
+    }
+    
+});
+    </script>
+    </body>
+    </html>

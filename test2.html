@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>querySelector Example</title>
+    <link rel="stylesheet" href="test2.css">
+</head>
+<body>
+<div id="target">
+    <p>The text to be changed</p>
+</div>
+<button id="change">click me</button>
+<script>
+    let target=document.getElementById("target");
+    let change=document.getElementById("change");
+   let colors =["blue", "green", "white"];
+   let index=0;
+      if(localStorage.getItem("backgroundColor")){
+        target.style.backgroundColor=localStorage.getItem("backgroundColor");
+        index=colors.indexOf( localStorage.getItem("backgroundColor"));
+      }
+
+      change.addEventListener("click", function(){
+        index=(index + 1) % colors.length;
+        target.style.backgroundColor=colors[index];
+        localStorage.setItem("backgroundColor", colors[index]);
+      });
+
+</script>
+</body>
+</html>

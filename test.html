@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>querySelector Example</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+<div id="box">
+<p>This is going to have a different background</p>
+</div>
+<button id="toggleBtn">Change</button>
+<button id="myButton">Click Me!</button>
+<button id="addItemBtn">Add Item</button>
+<ul id="itemList"></ul>
+<script>
+let button= document.getElementById("toggleBtn");
+let text =document.getElementById("box");
+if (localStorage.getItem("backgroundColor")){
+    text.style.backgroundColor=localStorage.getItem("backgroundColor");
+}
+button.addEventListener("click", function(){
+   let currentColor = window.getComputedStyle(text).backgroundColor;
+    if(currentColor=== "rgb(0, 0, 255)"){
+        text.style.backgroundColor = "white";
+        localStorage.setItem("backgroundColor","white");
+    }
+  else{
+    text.style.backgroundColor="blue";
+    localStorage.setItem("backgroundColor", "blue");
+  }
+});
+
+
+    let buttn = document.getElementById("myButton");
+
+    buttn.addEventListener("click", function(event) {
+        console.log("Event type: " + event.type);
+        console.log("Element clicked: " + event.target.tagName);
+    });
+    let butto = document.getElementById("addItemBtn");
+    let list = document.getElementById("itemList");
+
+    butto.addEventListener("click", function() {
+        // Create a new list item
+        let newItem = document.createElement("li");
+        newItem.textContent = "New Item";
+
+        // Append the new item to the list
+        list.appendChild(newItem);
+    });
+</script>
+</body>
+</html>

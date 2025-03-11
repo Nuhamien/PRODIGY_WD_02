@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>querySelector Example</title>
+    <link rel="stylesheet" href="test2.css">
+</head>
+<body>
+    <div >
+        <p id="too">
+            Click the button to change this text
+        </p>
+        <p>here is another text to check</p>
+    </div>
+    <button id="change">Change text</button>
+    <script>
+        let too=document.getElementById("too");
+        let change=document.getElementById("change");
+        let originalText=too.textContent;
+        let changeButton=change.innerHTML;
+      
+      change.addEventListener("click", function(){
+        if(too.textContent===originalText){
+        too.textContent="The text has been changed";
+        change.innerHTML=" return "
+        }
+       else{
+        too.textContent=originalText
+        change.innerHTML=changeButton;
+       }
+      });
+    </script>
+    </body>
+    </html>

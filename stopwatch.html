@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stopwatch with Milliseconds Counting to 60</title>
+    <link rel="stylesheet" href="stopwatch.css">
+</head>
+<body>
+    <h1>
+        Stopwatch
+    </h1>
+    <div class="content">
+        <p id="main"><span id="hr">00</span><span id=min>00</span><span id="sec">00</span></p> 
+    </div>
+    <div class="buttons">
+        <button id="begin">Start</button>
+        <button id="finish">Stop</button>
+        <button id="again">Reset</button>
+        <button id="loop">Lap</button>
+    </div>
+        <ul id="lapList"></ul>
+  
+   
+
+    <script>
+        let second = 0;
+        let minute = 0;
+        let hour = 0;
+        let millisecond = 0; // Displaying millisecond counter
+        let realTimeMillisecond = 0; // Real time millisecond counter for second counting
+        let timeInterval;
+        let original = "Stop";
+        let isRunning = false;
+
+        // Function to update the time
+        function updateTime() {
+            millisecond += 10; // Increase by 10 because we update every 10ms
+
+        if (millisecond >= 1000) {
+            millisecond = 0;
+            second++;
+        }
+
+            // If seconds reach 60, reset to 0 and increment minutes
+            if (second === 60) {
+                second = 0;
+                minute++;
+            }
+            
+            // If minutes reach 60, reset to 0 and increment hours
+            if (minute === 60) {
+                minute = 0;
+                hour++;
+            }
+
+            let formattedHour = hour.toString().padStart(2, '0');
+            let formattedMinute = minute.toString().padStart(2, '0');
+            let formattedSecond = second.toString().padStart(2, '0');
+            let formattedMillisecond = millisecond.toString().padStart(3, '0'); // Format milliseconds
+            
+            // Update the main display
+            document.getElementById("hr").textContent = formattedHour;
+            document.getElementById("min").textContent = formattedMinute;
+            document.getElementById("sec").textContent = formattedSecond;
+            document.getElementById("ms").textContent = formattedMillisecond;
+        }
+
+        let loop = document.getElementById("loop");
+        let begin = document.getElementById("begin");
+        let main = document.getElementById("main");
+        let finish = document.getElementById("finish");
+        let again = document.getElementById("again");
+        let lapList = document.getElementById("lapList");
+
+        // Start or Resume the stopwatch
+        begin.addEventListener("click", function() {
+            if (!isRunning) {
+                timeInterval = setInterval(updateTime, 10); // Update every 10ms for visual milliseconds
+                finish.textContent = "Stop";
+                isRunning = true;
+            }
+        });
+        begin.addEventListener("hover", function() {
+           
+        });
+
+        finish.addEventListener("click", function() {
+    if (isRunning) { 
+        // If running, stop the stopwatch
+        clearInterval(timeInterval);
+        finish.textContent = "Resume";
+        isRunning = false;
+    } else if (second > 0 || minute > 0 || hour > 0 || millisecond > 0) { 
+        // Resume only if the stopwatch has been started before
+        timeInterval = setInterval(updateTime, 10);
+        finish.textContent = "Stop";
+        isRunning = true;
+    }
+});
+ // Reset the stopwatch
+        again.addEventListener("click", function() {
+            clearInterval(timeInterval);
+            second = 0;
+            minute = 0;
+            hour = 0;
+            millisecond = 0; // Reset milliseconds for display
+            realTimeMillisecond = 0; // Reset actual time milliseconds
+
+    document.getElementById("hr").textContent = "00";
+    document.getElementById("min").textContent = "00";
+    document.getElementById("sec").textContent = "00";
+
+    finish.textContent = "Stop";
+    lapList.innerHTML = ''; // Clear lap list
+    isRunning = false;
+        });
+
+        // Record a lap
+        loop.addEventListener("click", function() {
+            let formattedHour = hour.toString().padStart(2, '0');
+            let formattedMinute = minute.toString().padStart(2, '0');
+            let formattedSecond = second.toString().padStart(2, '0');
+        
+
+            let lapItem = document.createElement("li");
+            lapItem.textContent = `${formattedHour}:${formattedMinute}:${formattedSecond}`;
+            lapList.appendChild(lapItem);
+        });
+       
+           
+    </script>
+</body>
+</html>
