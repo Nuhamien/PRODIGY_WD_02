@@ -125,6 +125,7 @@ li{
         text-align: center;
         margin-left: auto; /* Ensures centering */
         margin-right: auto;
+        color: #1c0257;
     }
 
     #main {
@@ -133,6 +134,7 @@ li{
         align-items: center;
         flex-wrap: wrap; /* Prevents overflow */
         width: 100%;
+        color:#1c0257
     }
 
     #hr, #min, #sec {
@@ -144,6 +146,7 @@ li{
         height: 70px;
         font-size: 30px; /* Reduce font size for better spacing */
         margin: 5px; /* Space out the elements */
+        border: 2px solid #1c0257; 
     }
 
     .content {
@@ -165,11 +168,16 @@ li{
 
     ul {
         width: 80%; /* Make the list take up more width on mobile */
-        
+        border:  2px solid #1c0257;
     }
     #begin, #finish, #again, #loop{
         display: inline-block;
         width:70px;
+        background-color:#001066;
+        border: 2px solid #20006b;
+    }
+    button{
+        font-size:14px;
     }
 }
 
