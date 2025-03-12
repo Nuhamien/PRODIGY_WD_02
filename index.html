@@ -105,7 +105,7 @@
             let hours = totalHours;
 
             let lapItem = document.createElement("li");
-            lapItem.textContent = `${hours.toString().padStart(2, '0')}${minutes.toString().padStart(2, '0')}${seconds.toString().padStart(2, '0')}`;
+            lapItem.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
             lapList.appendChild(lapItem);
         });
     </script>
