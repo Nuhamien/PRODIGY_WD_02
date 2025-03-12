@@ -1,5 +1,12 @@
 body{
-    background: linear-gradient(90deg, #2d048e 0%, #000000 100%);
+    background: linear-gradient(270deg, rgb(14, 1, 46) 0%, rgba(0, 0, 0, 0.986) 100%);
+    font-family: 'MyCustomFont', sans-serif;
+}
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('./DS-DIGIT.TTF') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 h1 {
     display: flex;
@@ -7,36 +14,36 @@ h1 {
     text-align: center;
     margin-top: 200px;
     margin-bottom: 0px;
-    color: #3e00ce;
+    color: #b4b5b4;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 70px;
-    font-weight: lighter;
+    font-weight:900;
 }
 
 #main{
-       color: #3600A1;
+       color: #0a6ef2;
         display: flex;
-        justify-content: center; /* Centers content horizontally */
-        align-items: center; /* Centers content vertically */
+        justify-content: center; 
+        align-items: center; 
         text-align: center;
         width: 100%;
-        margin-top: 10px;
-        flex-wrap: wrap; /* Ensures elements don't overflow */
+        margin-top: 5px;
+        flex-wrap: wrap; 
     }
     
 
-    #hr, #min, #sec {
-        display: flex; /* Use flexbox for better alignment */
+     #min, #sec, #ms {
+        display: flex; 
         justify-content: center;
         align-items: center;
         text-align: center;
-        border: 2px solid #3600A1; 
-        border-radius: 30px; 
+        border: 2px solid #0a6ef2; 
+        border-radius: 20px; 
         background-color: transparent; 
         font-size: 50px; 
-        margin: 5px; /* Added margin for spacing */
+        margin: 5px; 
         width: 100px; 
-        height: 100px; /* Added fixed height for uniformity */
+        height: 100px; 
         padding: 10px; 
         box-sizing: border-box;
     }
@@ -45,6 +52,7 @@ h1 {
 #lapList{
     color:#99adea;
     font-size: larger;
+    border:  2px solid #0a6ef2;
 }
 .content {
     display: flex;
@@ -56,11 +64,11 @@ h1 {
 
 .buttons {
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically (if needed) */
-    gap:10px;/* Spaces out buttons evenly */
+    justify-content: center; 
+    align-items: center; 
+    gap:10px;
     margin-top: 20px;
-    flex-wrap: wrap; /* Prevents overflow on smaller screens */
+    flex-wrap: wrap; 
     width: 100%;
 }
 
@@ -74,23 +82,19 @@ button{
    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 #begin{
-    background-color:#001066;
-    border: 2px solid #4308ce;
+    background-color:transparent;
+    border: 2px solid #0a6ef2;
    
 }
-#finish{
-    background-color:#001d50;
-    border: 2px solid #4b17c5;
- 
-}
+
 #again{
-    background-color:#00174A;
-    border: 2px solid #4b1db9;
+    background-color:transparent;
+    border: 2px solid #0a6ef2;
     
 }
 #loop{
-    background-color:#020751;
-    border: 2px solid #4b10d7;
+    background-color:transparent;
+    border: 2px solid #0a6ef2;
 } 
    
 button:hover{
@@ -104,12 +108,10 @@ ul {
     flex-direction: column;
     margin: 50px auto;
     width: 30vw;
-    max-width: 500px; /* Ensures it doesn’t get too wide */
+    max-width: 500px; 
     list-style-type: none;
-    border:  2px solid #4308ce;
     border-radius: 20px;
 }
-
 li{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -118,37 +120,55 @@ li{
     display: inline-block;
     width:110px;
 }
+@media (min-width: 768px) {
+    .active {
+        margin-left: 10vw;
+        display: flex;  
+    }
+    .centered {
+        margin-top: 50px;
+        justify-content: center;
+        align-self: center;
+    }
+    .expanded {
+        min-width: 150px; 
+        margin-left: 10vw;
+        width: 60%; 
+        margin: auto;
+    }
+}
 
 @media (max-width: 768px) {
     body{
-        background: linear-gradient(90deg, #0a6ef2 0%, #000000 100%);
+        background: linear-gradient(270deg, rgb(11, 1, 34) 0%, rgba(0, 0, 0, 0.918) 100%);
     }
     h1 {
-        font-size: 60px;
+        font-size: 50px;
         text-align: center;
-        margin-left: auto; /* Ensures centering */
+        margin-left: auto; 
         margin-right: auto;
-        color: #0a6ef2;
+        color: #b4b5b4;
+        font-weight:900;
     }
 
     #main {
         display: flex;
-        justify-content: center; /* Ensures centering */
+        justify-content: center; 
         align-items: center;
-        flex-wrap: wrap; /* Prevents overflow */
+        flex-wrap: wrap; 
         width: 100%;
         color:#0a6ef2;
     }
 
-    #hr, #min, #sec {
+    #min, #sec, #ms {
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        width: 70px; /* Smaller width for mobile */
+        width: 70px; 
         height: 70px;
-        font-size: 30px; /* Reduce font size for better spacing */
-        margin: 5px; /* Space out the elements */
+        font-size: 30px; 
+        margin: 5px; 
         border: 2px solid #0a6ef2; 
     }
 
@@ -162,7 +182,7 @@ li{
 
     .buttons {
         display: flex;
-        justify-content: center; /* Centers buttons */
+        justify-content: center; 
         flex-wrap: wrap;
         gap: 10px;
         padding-left: 0;
@@ -170,7 +190,7 @@ li{
     }
 
     ul {
-        width: 80%; /* Make the list take up more width on mobile */
+        width: 70%; 
         border:  2px solid #0a6ef2;
     }
     #begin, #finish, #again, #loop{
@@ -187,6 +207,7 @@ li{
     }
    
 }
+
 
 
 
