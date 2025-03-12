@@ -120,6 +120,9 @@ li{
 }
 
 @media (max-width: 768px) {
+    body{
+        background: linear-gradient(90deg, #0a6ef2 0%, #000000 100%);
+    }
     h1 {
         font-size: 60px;
         text-align: center;
