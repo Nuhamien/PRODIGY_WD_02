@@ -176,12 +176,16 @@ li{
     #begin, #finish, #again, #loop{
         display: inline-block;
         width:70px;
-        background-color:#001066;
+        background-color:transparent;
         border: 2px solid #0a6ef2;
     }
     button{
         font-size:14px;
     }
+    button:hover{
+        box-shadow: 0 0 20px rgba(152, 178, 197, 0.7);
+    }
+   
 }
 
 
